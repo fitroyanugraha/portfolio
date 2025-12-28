@@ -1,0 +1,87 @@
+.error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--base-500);
+  color: var(--base-100);
+  padding: 2rem;
+}
+
+.error-content {
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  background: rgba(20, 19, 19, 0.55);
+  backdrop-filter: blur(24px) saturate(120%) brightness(0.9);
+  -webkit-backdrop-filter: blur(24px) saturate(120%) brightness(0.9);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(252, 252, 252, 0.12) inset,
+    inset 0 1px 0 rgba(252, 252, 252, 0.08);
+}
+
+.error-content h1 {
+  margin-bottom: 1rem;
+  color: var(--base-100);
+}
+
+.error-content.not-found h1 {
+  font-size: 6rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.error-content p {
+  margin-bottom: 2rem;
+  color: var(--base-200);
+  font-size: 1.125rem;
+}
+
+.error-content.not-found p {
+  font-size: 1.25rem;
+}
+
+.error-button {
+  background-color: var(--base-100);
+  color: var(--base-500);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.error-button:hover {
+  background-color: var(--base-200);
+  transform: translateY(-2px);
+}
+
+.error-details {
+  margin-top: 2rem;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--base-400);
+}
+
+.error-details summary {
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--base-200);
+}
+
+.error-details pre {
+  font-family: "DM Mono", monospace;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  color: var(--base-250);
+  margin-top: 0.5rem;
+}

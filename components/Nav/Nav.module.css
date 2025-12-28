@@ -1,0 +1,259 @@
+/* menu */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  clip-path: circle(0% at 50% 50%);
+  background-color: var(--base-500);
+  overflow: hidden;
+  padding: 1rem;
+  z-index: 800;
+}
+
+.menu-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  /* Horizontal for desktop */
+  gap: 2rem;
+  background-color: var(--base-450);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-1 {
+  flex: 3;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-2 {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.link {
+  position: relative;
+  pointer-events: auto;
+}
+
+.link a h2 {
+  text-decoration: none;
+  color: var(--base-300);
+  font-size: 4rem;
+  line-height: 1.1;
+  pointer-events: auto;
+  transition: color 0.3s ease-out;
+}
+
+.link a h2:hover {
+  color: var(--base-100);
+}
+
+.link a h2:active {
+  color: var(--base-100);
+}
+
+.link a[data-pressed="true"] h2 {
+  color: var(--base-100);
+}
+
+.link a:focus-visible h2 {
+  color: var(--base-100);
+}
+
+.socials {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  gap: 2rem;
+}
+
+.socials .sub-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.menu-meta {
+  color: var(--base-100);
+}
+
+.socials .sub-col p,
+.socials .sub-col a {
+  position: relative;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.menu-meta p:nth-child(1) {
+  color: var(--base-400);
+  margin-bottom: 1rem;
+}
+
+.menu-meta a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-meta a:hover {
+  color: var(--base-200);
+}
+
+.menu-meta a:active {
+  color: var(--base-200);
+}
+
+.menu-meta a[data-pressed="true"] {
+  color: var(--base-200);
+}
+
+.menu-meta a:focus-visible {
+  color: var(--base-200);
+}
+
+.copyEmail {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--base-100);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+}
+
+.copyEmail:active {
+  transform: translateY(1px) scale(0.98);
+  opacity: 0.85;
+}
+
+.copyEmail:focus-visible {
+  outline: 2px solid var(--base-300);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* SplitText mask styles */
+.split-line {
+  overflow: hidden;
+  will-change: transform;
+  pointer-events: auto;
+}
+
+/* Tablet: 768px - 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .menu-wrapper {
+    flex-direction: column;
+    gap: var(--gap-xl);
+  }
+
+  .link a h2 {
+    font-size: 3rem;
+    line-height: 1.15;
+    letter-spacing: -0.12rem;
+  }
+
+  .col-1 {
+    justify-content: flex-start;
+    padding: var(--gap-md);
+  }
+
+  .col-2 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--gap-md);
+  }
+
+  .socials {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    gap: var(--gap-xl);
+    padding-bottom: 6rem;
+  }
+
+  .socials .sub-col {
+    flex: 1;
+  }
+}
+
+/* Mobile: 0 - 767px */
+@media (max-width: 767px) {
+  .menu-wrapper {
+    flex-direction: column;
+    gap: var(--gap-sm);
+  }
+
+  .link a h2 {
+    font-size: 2.35rem;
+    line-height: 1.15;
+    letter-spacing: -0.1rem;
+  }
+
+  .col-1 {
+    justify-content: flex-start;
+    padding: var(--gap-sm);
+  }
+
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--gap-sm);
+  }
+
+  .socials {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    padding-bottom: 5rem;
+  }
+
+  .socials .sub-col {
+    gap: var(--gap-sm);
+  }
+
+  .socials .sub-col p,
+  .socials .sub-col a {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .menu-meta p:nth-child(1) {
+    margin-bottom: 0.5rem;
+  }
+
+  .socials .sub-col {
+    flex: 1;
+  }
+
+  .menu-commissions {
+    display: block;
+  }
+}

@@ -1,0 +1,17 @@
+/* AnimateItem CSS - Minimal styles for animation performance */
+
+/* Hide children until animation is ready */
+[data-animate-hidden="true"]>* {
+  visibility: hidden;
+}
+
+[data-animate-wrapper="true"] {
+  display: contents;
+}
+
+.animate-item {
+  display: contents;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}

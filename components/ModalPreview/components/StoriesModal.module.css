@@ -1,0 +1,314 @@
+/* Stories Modal - Instagram-like UI for mobile */
+.stories-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  height: 100dvh;
+  background: #000;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  animation: storiesModalSlideUp 0.3s ease-out;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@keyframes storiesModalSlideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Progress indicators at top */
+.stories-progress-container {
+  display: flex;
+  gap: 2px;
+  padding: calc(16px + env(safe-area-inset-top)) 16px 8px;
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+}
+
+.stories-progress-bar {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stories-progress-bar.completed {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.stories-progress-bar.active {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.stories-progress-bar.pending {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Close button */
+.stories-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  z-index: 4;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.stories-close-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.stories-close-btn:active {
+  transform: scale(0.95);
+}
+
+/* Main content container */
+.stories-content-container {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  padding-bottom: 24px;
+  box-sizing: border-box;
+}
+
+/* Content styles */
+.stories-content-image {
+  max-width: 100vw;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.story-image {
+  max-width: 100vw;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.stories-content-video {
+  max-width: 100vw;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.stories-content-pdf {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.stories-pdf-viewer {
+  width: 95vw;
+  height: 85vh;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Touch feedback indicators */
+.touch-feedback {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  z-index: 3;
+  animation: touchFeedbackPulse 0.3s ease-out;
+  pointer-events: none;
+}
+
+.touch-feedback-left {
+  left: 20px;
+}
+
+.touch-feedback-right {
+  right: 20px;
+}
+
+@keyframes touchFeedbackPulse {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* Pull to close hint */
+.pull-hint {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  text-align: center;
+  z-index: 3;
+  animation: pullHintFade 0.3s ease-in;
+  pointer-events: none;
+}
+
+@keyframes pullHintFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* First time navigation hint */
+.first-time-hint {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  text-align: center;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  animation: firstTimeHintFade 0.5s ease-in;
+  pointer-events: none;
+}
+
+@keyframes firstTimeHintFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Bottom info */
+.stories-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+  color: white;
+  font-size: 14px;
+  position: relative;
+  z-index: 3;
+}
+
+.stories-counter {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.stories-hint {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .stories-progress-container {
+    padding: 12px 12px 6px;
+  }
+
+  .stories-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .stories-close-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+
+
+  .stories-hint {
+    font-size: 11px;
+  }
+}
+
+/* Orientation handling */
+@media (orientation: landscape) and (max-height: 500px) {
+  .stories-progress-container {
+    padding: 8px 16px 4px;
+  }
+
+
+  .stories-close-btn {
+    top: 8px;
+    right: 16px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .stories-content-pdf {
+    background: #1a1a1a;
+  }
+
+  .stories-pdf-viewer {
+    background: #2a2a2a;
+  }
+}

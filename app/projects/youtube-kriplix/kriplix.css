@@ -1,0 +1,896 @@
+/* Kriplix Youtube Channel Showcase */
+
+.kriplix-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--base-500);
+  color: var(--base-100);
+}
+
+/* Hero Section */
+.kriplix-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.kriplix-hero-bg {
+  background-color: rgb(187, 14, 26);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.kriplix-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* transform: translateY(-3%); */
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.kriplix-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+      rgba(20, 19, 19, 0) 0%,
+      rgba(20, 19, 19, 0.1) 40%,
+      rgba(20, 19, 19, 0.5) 70%,
+      rgba(20, 19, 19, 0.85) 100%);
+  z-index: 2;
+}
+
+.kriplix-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  width: 100%;
+}
+
+
+.kriplix-hero-content p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--base-200);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.01em;
+}
+
+.kriplix-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--base-100);
+  color: var(--base-500);
+  border-radius: 3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kriplix-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Content Sections */
+.kriplix-section {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.kriplix-section:nth-child(even) {
+  background-color: var(--base-600);
+}
+
+/* Light Section - Override global.css */
+.kriplix-section.kriplix-light-section {
+  background-color: var(--base-500);
+  color: var(--base-100);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.kriplix-light-section .kriplix-section-label {
+  color: var(--base-300);
+}
+
+.kriplix-light-section .kriplix-section-title {
+  color: var(--base-100);
+}
+
+.kriplix-light-section .kriplix-section-desc {
+  color: var(--base-250);
+}
+
+/* Thumbnail items in light section */
+.kriplix-light-section .kriplix-thumbnail-item {
+  box-shadow: 0 4px 12px rgba(20, 19, 19, 0.08);
+}
+
+/* Highlights Grid */
+.kriplix-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.kriplix-highlight-item {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 1rem;
+  border: 1px solid var(--base-400);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.kriplix-highlight-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.kriplix-highlight-item:hover {
+  border-color: var(--base-300);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.kriplix-highlight-item:hover::before {
+  opacity: 1;
+}
+
+.kriplix-highlight-item svg {
+  color: var(--base-200);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.kriplix-highlight-item:hover svg {
+  color: var(--base-100);
+  transform: scale(1.1);
+}
+
+.kriplix-highlight-item h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.625rem;
+  color: var(--base-100);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.kriplix-highlight-item p {
+  font-size: 0.875rem;
+  color: var(--base-300);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+.kriplix-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.kriplix-section-header {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kriplix-section-label {
+  font-size: 0.8125rem;
+  color: var(--base-300);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.kriplix-section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--base-100);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.kriplix-section-desc {
+  font-size: clamp(0.9375rem, 2vw, 1.125rem);
+  color: var(--base-200);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  letter-spacing: -0.01em;
+}
+
+/* Grid Layouts */
+.kriplix-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.kriplix-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.kriplix-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Content Cards */
+.kriplix-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.kriplix-content h3 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--base-200);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.kriplix-content p {
+  color: var(--base-300);
+  line-height: 1.7;
+  font-size: 0.9375rem;
+  letter-spacing: -0.005em;
+}
+
+/* Media Container */
+.kriplix-media {
+  position: relative;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--base-600);
+  transition: transform 0.3s ease;
+}
+
+.kriplix-media:hover {
+  transform: translateY(-5px);
+}
+
+.kriplix-media img,
+.kriplix-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Logo Showcase */
+.kriplix-logo-container {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: none !important;
+}
+
+.kriplix-logo-container:hover {
+  transform: none !important;
+}
+
+/* Video Player */
+.kriplix-video {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: var(--base-600);
+  cursor: none;
+  border: 1px solid var(--base-500);
+}
+
+.kriplix-video.video-playing {
+  cursor: default;
+}
+
+.kriplix-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kriplix-video .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.kriplix-video:hover .video-overlay {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Mobile Play Button */
+.mobile-play-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--base-100);
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+.mobile-play-button:active {
+  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Show only on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-play-button {
+    display: flex;
+  }
+}
+
+/* Thumbnail Grid */
+.kriplix-thumbnail-item {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+}
+
+/* Hover effects only for devices that support hover (desktop) */
+@media (hover: hover) {
+  .kriplix-thumbnail-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.kriplix-thumbnail-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  display: block;
+}
+
+/* Stats Grid */
+.kriplix-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.kriplix-stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: var(--base-500);
+  border-radius: 1rem;
+  border: 1px solid var(--base-400);
+}
+
+.kriplix-stat-label {
+  font-size: 0.875rem;
+  color: var(--base-300);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.kriplix-stat-value {
+  font-size: 1.125rem;
+  color: var(--base-100);
+  font-weight: 600;
+}
+
+/* Process Steps */
+.kriplix-process {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.kriplix-process-item {
+  padding: 2rem;
+  background: var(--base-450);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.kriplix-process-item:hover {
+  transform: translateY(-5px);
+}
+
+.kriplix-process-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--base-300);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.kriplix-process-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--base-100);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.kriplix-process-desc {
+  font-size: 0.9375rem;
+  color: var(--base-250);
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+}
+
+/* Wrapper for ProcessSteps component */
+.process-header.kriplix-section-header {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.process-header.kriplix-section-header .process-label {
+  font-size: 0.8125rem;
+  color: var(--base-300);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.process-header.kriplix-section-header .process-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--base-100);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.process-item {
+  padding: 2rem;
+  background: var(--base-450);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.process-item:hover {
+  transform: translateY(-5px);
+}
+
+.process-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--base-300);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.process-item-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--base-100);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.process-item-desc {
+  font-size: 0.9375rem;
+  color: var(--base-250);
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+}
+
+
+/* Color Palette Grid */
+.kriplix-color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.kriplix-color-card {
+  background: var(--base-100);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kriplix-color-swatch {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.kriplix-color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  opacity: 1;
+}
+
+.color-rgb {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Light color swatch (white) - dark text */
+.kriplix-color-swatch-light .color-rgb {
+  color: #1a1a1a;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.kriplix-color-info {
+  padding: 1rem;
+}
+
+.kriplix-color-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--base-500);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.kriplix-color-desc {
+  font-size: 0.9375rem;
+  color: var(--base-350);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .kriplix-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .kriplix-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kriplix-highlights {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .kriplix-final-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .kriplix-section {
+    padding: 5rem 0;
+  }
+
+  .kriplix-color-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .kriplix-hero {
+    height: 70svh;
+    min-height: auto;
+  }
+
+
+
+
+  .kriplix-hero-bg img {
+    object-fit: contain !important;
+    object-position: center;
+    transform: scale(1.5);
+  }
+
+  .kriplix-hero-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .kriplix-hero-content p {
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .kriplix-section-title {
+    font-size: 1.75rem;
+  }
+
+  .kriplix-section-desc {
+    font-size: 0.9375rem;
+  }
+
+  .kriplix-content h3 {
+    font-size: 1rem;
+  }
+
+  .kriplix-grid-2 {
+    gap: 2.5rem;
+  }
+
+  .kriplix-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .kriplix-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .kriplix-container {
+    padding: 0 1.5rem;
+  }
+
+  .kriplix-section {
+    padding: 4rem 0;
+  }
+
+  .kriplix-section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .kriplix-highlight-item {
+    padding: 2rem 1.5rem;
+  }
+
+  .kriplix-process-item {
+    padding: 1.75rem;
+  }
+
+  .kriplix-stats,
+  .kriplix-process {
+    grid-template-columns: 1fr;
+  }
+
+  .kriplix-final {
+    margin-top: 4rem;
+  }
+
+  .kriplix-final-grid {
+    gap: 2.5rem;
+  }
+
+  .kriplix-tag {
+    padding: 0.875rem 1.75rem;
+  }
+
+  .kriplix-tag h3 {
+    font-size: 0.875rem;
+  }
+
+  .kriplix-color-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .kriplix-color-card {
+    padding: 0.625rem;
+    gap: 0.625rem;
+  }
+
+  .kriplix-color-swatch {
+    border-radius: 0.5rem;
+  }
+
+  .kriplix-color-info {
+    padding: 0.625rem 0.5rem;
+  }
+
+  .kriplix-color-info h3 {
+    font-size: 0.9375rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .kriplix-color-desc {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .color-rgb {
+    font-size: 0.6875rem;
+  }
+}
+
+/* Modal */
+.kriplix-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeInModal 0.2s ease;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.kriplix-modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kriplix-modal-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.kriplix-modal-close {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: var(--base-100);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.kriplix-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.kriplix-modal-prev,
+.kriplix-modal-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: var(--base-100);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.kriplix-modal-prev {
+  left: 2rem;
+}
+
+.kriplix-modal-next {
+  right: 2rem;
+}
+
+.kriplix-modal-prev:hover,
+.kriplix-modal-next:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.kriplix-modal-counter {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  color: var(--base-100);
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 10000;
+}

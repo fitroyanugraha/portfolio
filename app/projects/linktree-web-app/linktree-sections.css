@@ -1,0 +1,356 @@
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.feature-card h4 {
+    color: var(--base-100);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.875rem;
+    line-height: 1.3;
+}
+
+.feature-card p {
+    color: var(--base-350);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+/* Tech Stack Grid */
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tech-category {
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.tech-category h4 {
+    color: var(--base-350);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.tech-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-category li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 0.75rem 0;
+    border-bottom: none;
+    margin-bottom: 0.5rem;
+}
+
+.tech-category li:last-child {
+    border-bottom: none;
+}
+
+.tech-name {
+    color: var(--base-100);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    display: block;
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
+}
+
+.tech-version {
+    color: var(--base-350);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    display: block;
+}
+
+.tech-purpose {
+    color: var(--base-300);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+/* Security Grid */
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.security-card {
+    padding: 1.75rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1rem;
+}
+
+.security-card h4 {
+    color: var(--base-100);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1.375rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    letter-spacing: 0.3px;
+}
+
+.security-card h4::before {
+    content: "🔒";
+    font-size: 1.25rem;
+}
+
+.security-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.security-card li {
+    color: var(--base-350);
+    font-size: 0.95rem;
+    padding: 0.45rem 0 0.45rem 1.75rem;
+    line-height: 1.6;
+    position: relative;
+    letter-spacing: 0.2px;
+}
+
+.security-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* SEO Features List */
+.seo-features-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+    margin-top: 2rem;
+}
+
+.seo-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.seo-check {
+    color: var(--base-300);
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    margin-right: 0.5rem;
+}
+
+.seo-item span:last-child {
+    color: var(--base-100);
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+}
+
+/* CTA Section */
+.cta-section {
+    padding-bottom: 6rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.cta-btn-primary {
+    background: linear-gradient(135deg, var(--base-100) 0%, var(--base-200) 100%);
+    color: var(--base-500);
+}
+
+.cta-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+
+.cta-btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--base-100);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cta-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+
+    .features-grid,
+    .tech-stack-grid,
+    .security-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .seo-features-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .features-grid,
+    .security-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .tech-stack-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+
+    .feature-card,
+    .tech-category,
+    .security-card {
+        padding: 1rem;
+    }
+
+    .security-card h4 {
+        margin-bottom: 0.75rem;
+        gap: 0.5rem;
+        line-height: 1.25;
+    }
+
+    .security-card ul {
+        gap: 0.5rem;
+    }
+
+    .security-card li {
+        font-size: 0.9rem;
+        padding: 0.45rem 0 0.45rem 1.25rem;
+        line-height: 1.5;
+    }
+
+    .security-card li:before {
+        font-size: 1rem;
+    }
+
+    .feature-icon {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-card h4,
+    .tech-category h4,
+    .security-card h4 {
+        font-size: 0.95rem;
+    }
+
+    .feature-card h4 {
+        margin-bottom: 0.5rem;
+        line-height: 1.25;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .seo-features-list {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .seo-item {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .seo-check {
+        font-size: 1rem;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .seo-item span:last-child {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cta-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,229 @@
+.project-hero {
+  position: relative;
+  width: 100vw;
+  min-height: 150svh;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--base-500);
+}
+
+.project-hero .project-hero-img {
+  display: none;
+}
+
+.project-hero .project-hero-overlay {
+  display: none;
+}
+
+.project-content {
+  padding: 4rem 0 8rem 0;
+}
+
+.project-mobile-preview {
+  width: 90%;
+  aspect-ratio: 9/16;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.project-mobile-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-hero-header h1 {
+  position: relative;
+}
+
+.project-hero .container {
+  position: relative;
+  padding-top: 35svh;
+  color: var(--base-100);
+}
+
+.project-hero .container .project-content,
+.project-details.project-details-1 .container,
+.project-details.project-details-2 .container {
+  display: flex;
+  position: relative;
+  gap: 2rem;
+}
+
+.project-col:nth-child(1) {
+  flex: 2;
+}
+
+.project-col:nth-child(2) {
+  flex: 3;
+}
+
+.project-hero .project-content .project-col:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.project-hero .project-content .project-col:nth-child(2) h3 {
+  width: 85%;
+  margin-bottom: 2rem;
+}
+
+.project-meta .project-hero-row {
+  display: flex;
+  gap: 3rem;
+}
+
+.project-meta .project-hero-row .project-hero-sub-col {
+  flex: 1;
+}
+
+.project-meta .project-hero-row .project-hero-sub-col p:nth-child(1) {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--base-350);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.75rem;
+}
+
+.project-meta .project-hero-row .project-hero-sub-col p:not(:nth-child(1)) {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--base-100);
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5rem;
+}
+
+.project-details {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  color: var(--base-350);
+  padding-top: 4rem;
+}
+
+.project-details h3 {
+  width: 85%;
+  color: var(--base-100);
+  margin-bottom: 2rem;
+}
+
+.project-details-img {
+  width: 75%;
+  border-radius: 2rem;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  margin-top: 4rem;
+}
+
+.project-details-img.landscape {
+  aspect-ratio: 16/9;
+}
+
+.project-details.project-details-2 .project-meta {
+  margin-bottom: 4rem;
+  color: var(--base-100);
+}
+
+.project-details.project-details-2 .project-meta .project-hero-sub-col p:nth-child(1) {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--base-350);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.75rem;
+}
+
+.project-details.project-details-2 .project-meta .project-hero-sub-col p:not(:nth-child(1)) {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--base-100);
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5rem;
+}
+
+.project-details.project-details-2 .project-details-img {
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+
+/* Hero View Project Button */
+.view-project-button {
+  position: relative;
+  display: inline-block;
+}
+
+.view-project-button p {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  gap: 6px;
+}
+
+.view-project-button .underline-dashed {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-image: repeating-linear-gradient(to right,
+      currentColor 0,
+      currentColor 4px,
+      transparent 4px,
+      transparent 8px);
+}
+
+@media (max-width: 1000px) {
+
+  .project-hero .container .project-content,
+  .project-details.project-details-1 .container,
+  .project-details.project-details-2 .container {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .project-details-img,
+  .project-hero .project-content .project-col:nth-child(2) h3,
+  .project-details h3 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-hero {
+    min-height: 110svh;
+  }
+
+  .project-hero .container {
+    padding-top: 22svh;
+  }
+
+  .project-hero-header h1 {
+    font-size: 4.5rem;
+    line-height: 1.05;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-hero .project-content .project-col:nth-child(1) p {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin-top: 0;
+  }
+
+  .project-content {
+    padding: 2.5rem 0 4.5rem 0;
+  }
+
+  .project-mobile-preview {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+  }
+}

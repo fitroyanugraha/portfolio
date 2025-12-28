@@ -1,0 +1,573 @@
+/* Le.Coh Coffeeshop Showcase */
+
+.lecoh-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--base-500);
+  color: var(--base-100);
+}
+
+/* Hero Section */
+.lecoh-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lecoh-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.lecoh-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.lecoh-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+      rgba(20, 19, 19, 0.3) 0%,
+      rgba(20, 19, 19, 0.6) 50%,
+      rgba(20, 19, 19, 0.85) 100%);
+  z-index: 2;
+}
+
+.lecoh-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  width: 100%;
+}
+
+.lecoh-hero-content h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--base-100);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.lecoh-hero-content p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--base-200);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  font-weight: 400;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.01em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Content Sections */
+.lecoh-section {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.lecoh-section:nth-child(even) {
+  background-color: var(--base-600);
+}
+
+/* Light Section */
+.lecoh-section.lecoh-light-section {
+  background-color: var(--base-500);
+  color: var(--base-100);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.lecoh-light-section .lecoh-section-label {
+  color: var(--base-300);
+}
+
+.lecoh-light-section .lecoh-section-title {
+  color: var(--base-100);
+}
+
+.lecoh-light-section .lecoh-section-desc {
+  color: var(--base-250);
+}
+
+/* Highlights Grid */
+.lecoh-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.lecoh-highlight-item {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 1rem;
+  border: 1px solid var(--base-400);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lecoh-highlight-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.lecoh-highlight-item:hover {
+  border-color: var(--base-300);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.lecoh-highlight-item:hover::before {
+  opacity: 1;
+}
+
+.lecoh-highlight-item svg {
+  color: var(--base-200);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.lecoh-highlight-item:hover svg {
+  color: var(--base-100);
+  transform: scale(1.1);
+}
+
+.lecoh-highlight-item h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.625rem;
+  color: var(--base-100);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.lecoh-highlight-item p {
+  font-size: 0.875rem;
+  color: var(--base-300);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+.lecoh-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.lecoh-section-header {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lecoh-section-label {
+  font-size: 0.8125rem;
+  color: var(--base-300);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.lecoh-section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--base-100);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.lecoh-section-desc {
+  font-size: clamp(0.9375rem, 2vw, 1.125rem);
+  color: var(--base-200);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  letter-spacing: -0.01em;
+}
+
+/* Logo Section */
+.lecoh-logo-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.lecoh-logo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lecoh-logo-content h3 {
+  font-size: 1.125rem;
+  color: var(--base-200);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+.lecoh-logo-container {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: none !important;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.lecoh-logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2rem;
+}
+
+/* Tabs */
+.lecoh-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 600;
+}
+
+.lecoh-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--base-400);
+  border-radius: 3rem;
+  color: var(--base-250);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  letter-spacing: -0.005em;
+  line-height: 1;
+}
+
+.lecoh-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--base-300);
+  color: var(--base-150);
+  transform: translateY(-2px);
+}
+
+.lecoh-tab.active {
+  background: var(--base-100);
+  border-color: var(--base-100);
+  color: var(--base-500);
+  transform: translateY(0);
+}
+
+.lecoh-tab svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.lecoh-tab span {
+  display: inline-block;
+  line-height: 1;
+}
+
+.lecoh-tab-count {
+  font-size: 0.8125rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.lecoh-tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Tabs in Light Section */
+.lecoh-light-section .lecoh-tab {
+  background: rgba(20, 19, 19, 0.05);
+  border-color: rgba(20, 19, 19, 0.15);
+  color: rgb(90, 89, 89);
+}
+
+.lecoh-light-section .lecoh-tab:hover {
+  background: rgba(20, 19, 19, 0.08);
+  border-color: rgba(20, 19, 19, 0.25);
+  color: rgb(60, 59, 59);
+  transform: translateY(-2px);
+}
+
+.lecoh-light-section .lecoh-tab.active {
+  background: rgb(20, 19, 19);
+  border-color: rgb(20, 19, 19);
+  color: rgb(241, 241, 241);
+  transform: translateY(0);
+}
+
+/* Gallery Grid */
+.lecoh-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.lecoh-gallery-item {
+  position: relative;
+  aspect-ratio: 9/16;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.lecoh-gallery-item.hidden {
+  display: none !important;
+}
+
+/* Menu items - wider aspect ratio */
+.lecoh-gallery-item[data-category="menu"] {
+  aspect-ratio: 7/5;
+  grid-column: span 2;
+}
+
+/* Hover effects - Desktop only */
+@media (hover: hover) and (pointer: fine) {
+  .lecoh-gallery-item:hover {
+    transform: translateY(-8px) translateZ(0);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (hover: none) {
+  .lecoh-gallery-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (pointer: coarse) {
+  .lecoh-gallery-item {
+    transition: none !important;
+  }
+}
+
+.lecoh-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+}
+
+/* Video Thumbnail in Gallery */
+.lecoh-gallery-video-thumb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.lecoh-gallery-video-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: var(--base-100);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .lecoh-highlights {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .lecoh-section {
+    padding: 5rem 0;
+  }
+
+  .lecoh-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+
+
+  .lecoh-logo-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .lecoh-hero {
+    height: 80vh;
+    min-height: 600px;
+  }
+
+  .lecoh-hero-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .lecoh-hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .lecoh-hero-content p {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .lecoh-section-title {
+    font-size: 1.75rem;
+  }
+
+  .lecoh-section-desc {
+    font-size: 0.9375rem;
+  }
+
+  .lecoh-container {
+    padding: 0 1.5rem;
+  }
+
+  .lecoh-section {
+    padding: 4rem 0;
+  }
+
+  .lecoh-section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .lecoh-highlight-item {
+    padding: 2rem 1.5rem;
+  }
+
+  .lecoh-tabs {
+    gap: 0.75rem;
+  }
+
+  .lecoh-tab {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+  }
+
+  .lecoh-tab svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .lecoh-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .lecoh-logo-container {
+    aspect-ratio: 1;
+  }
+
+  .lecoh-logo-content h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lecoh-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .lecoh-tabs {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .lecoh-tab {
+    padding: 0.625rem 1rem;
+    font-size: 0.75rem;
+    gap: 0.375rem;
+    white-space: nowrap;
+  }
+
+  .lecoh-tab span:first-of-type {
+    font-size: 0.75rem;
+  }
+
+  .lecoh-tab-count {
+    font-size: 0.6875rem !important;
+  }
+
+  .lecoh-tab svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .lecoh-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

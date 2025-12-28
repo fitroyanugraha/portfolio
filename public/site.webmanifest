@@ -1,0 +1,24 @@
+{
+    "name": "Fitroya Nugraha Portfolio",
+    "short_name": "Piter's Portfolio",
+    "description": "Creative Designer & Developer - Video Editing, Graphic Design, and Web Development",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#141313",
+    "theme_color": "#141313",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/assets/star.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "portfolio",
+        "design",
+        "development"
+    ],
+    "lang": "en-US"
+}

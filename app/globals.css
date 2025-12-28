@@ -1,0 +1,264 @@
+:root {
+  --font-manrope: var(--font-manrope);
+  --font-dm-mono: var(--font-dm-mono);
+
+  /* Colors */
+  --base-100: rgb(245, 245, 245);
+  --base-200: rgb(204, 204, 203);
+  --base-250: rgb(177, 176, 176);
+  --base-300: rgb(150, 149, 149);
+  --base-350: rgb(122, 122, 122);
+  --base-400: rgb(100, 100, 100);
+  --base-450: rgb(31, 29, 29);
+  --base-500: rgb(20, 19, 19);
+
+
+
+  /* Spacing System */
+  --container-padding-desktop: 2rem;
+  --container-padding-tablet: 1.5rem;
+  --container-padding-mobile: 1rem;
+
+  --gap-xl: 4rem;
+  --gap-lg: 2rem;
+  --gap-md: 1.5rem;
+  --gap-sm: 1rem;
+  --gap-xs: 0.5rem;
+
+  /* Typography Scales */
+  --h1-desktop: 5rem;
+  --h1-tablet: 3.5rem;
+  --h1-mobile: 2.5rem;
+
+  --h2-desktop: 3.5rem;
+  --h2-tablet: 2.5rem;
+  --h2-mobile: 2rem;
+
+  --h3-desktop: 2.5rem;
+  --h3-tablet: 2rem;
+  --h3-mobile: 1.5rem;
+
+  --body-lg: 1.25rem;
+  --body-md: 1.125rem;
+  --body-base: 1rem;
+  --body-sm: 0.875rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  /* border: 0.1px solid red; */
+
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #0d0c0c;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+section,
+.footer {
+  background-color: var(--base-500);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: -0.25rem;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: 550;
+  letter-spacing: -0.15rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: -0.075rem;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+p.md {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+p.lg {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+p.mono {
+  text-transform: uppercase;
+  font-family: "DM Mono";
+  font-size: 0.9rem;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+p.md.mono {
+  font-size: 1rem;
+}
+
+p.lg.mono {
+  font-size: 1.1rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--base-200);
+  border-radius: 0.35rem;
+  transition: color 0.2s ease, outline 0.2s ease;
+}
+
+a:hover {
+  color: var(--base-100);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--base-100);
+  outline-offset: 4px;
+}
+
+a:active {
+  color: var(--base-100) !important;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--base-100);
+  outline-offset: 2px;
+}
+
+/* Remove default outline for mouse users but keep for keyboard */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+span.spacer {
+  display: inline-block;
+  width: 20rem;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+/* Tablet Breakpoint: 768px - 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  h1 {
+    font-size: var(--h1-tablet);
+    letter-spacing: -0.15rem;
+  }
+
+  h2 {
+    font-size: var(--h2-tablet);
+    letter-spacing: -0.1rem;
+  }
+
+  h3 {
+    font-size: var(--h3-tablet);
+    letter-spacing: -0.05rem;
+  }
+
+  .container {
+    padding: var(--container-padding-tablet);
+  }
+}
+
+/* Mobile Breakpoint: 0 - 767px */
+@media (max-width: 767px) {
+  h1 {
+    font-size: var(--h1-mobile);
+    letter-spacing: -0.1rem;
+  }
+
+  h2 {
+    font-size: var(--h2-mobile);
+    letter-spacing: -0.05rem;
+  }
+
+  h3 {
+    font-size: var(--h3-mobile);
+    letter-spacing: -0.025rem;
+  }
+
+  .container {
+    padding: var(--container-padding-mobile);
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: transform, opacity, clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 10000;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
+}
+
+body.menu-open * {
+  pointer-events: none;
+}
+
+body.menu-open .menu,
+body.menu-open .menu *,
+body.menu-open .menu-toggle {
+  pointer-events: auto;
+}
+
+/* Reduced motion support removed for optimal animation experience */

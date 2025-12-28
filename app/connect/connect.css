@@ -1,0 +1,105 @@
+.connect-hero {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  padding: 15svh 0 10svh 0;
+  color: var(--base-200);
+}
+
+.connect-hero .container {
+  display: flex;
+  gap: 2rem;
+}
+
+.connect-hero .container .connect-col:nth-child(1) {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.connect-hero .container .connect-col:nth-child(2) {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-hero .connect-hero-header h1 {
+  width: 60%;
+  color: var(--base-350);
+}
+
+.connect-hero .connect-copy-year h1 {
+  font-size: 20vw;
+  font-weight: 450;
+  color: var(--base-100);
+}
+
+.connect-hero .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.connect-hero .contact-info .contact-info-block p {
+  color: var(--base-100);
+  margin-bottom: 0.5rem;
+}
+
+.connect-hero .contact-info .contact-info-block p:nth-child(1) {
+  color: var(--base-300);
+}
+
+.connect-hero .contact-info .contact-info-block .copy-email {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--base-100);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+}
+
+.connect-hero .contact-info .contact-info-block .copy-email:active {
+  transform: translateY(1px) scale(0.98);
+  opacity: 0.85;
+}
+
+.connect-hero .contact-info .contact-info-block .copy-email:focus-visible {
+  outline: 2px solid var(--base-300);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.connect-hero .connect-img {
+  aspect-ratio: 1;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .connect-hero .container {
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  .connect-hero .container .connect-col:nth-child(1) {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .connect-hero .connect-hero-header h1 {
+    width: 100%;
+  }
+
+  .connect-hero .connect-copy-year h1 {
+    font-size: 3rem;
+  }
+}

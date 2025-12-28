@@ -1,0 +1,703 @@
+.user-flow-container {
+    width: 100%;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.flow-diagram-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.flow-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+}
+
+.reactflow-wrapper {
+    width: 100%;
+    height: 700px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    background: var(--base-100);
+    overflow: hidden;
+    position: relative;
+}
+
+.reactflow-wrapper .react-flow__viewport {
+    background: transparent !important;
+}
+
+.reactflow-wrapper .react-flow__background {
+    background-color: transparent !important;
+}
+
+.reactflow-wrapper .react-flow__edges {
+    stroke: var(--base-300);
+}
+
+.reactflow-wrapper .react-flow__edge-path {
+    stroke: #9ca3af !important;
+    stroke-width: 2 !important;
+}
+
+.reactflow-wrapper .react-flow__edge.animated path {
+    stroke-dasharray: 5;
+    animation: dashdraw 0.5s linear infinite;
+}
+
+.reactflow-wrapper .react-flow__node {
+    background: none !important;
+    border: none !important;
+}
+
+.reactflow-wrapper .react-flow__node>div {
+    background: inherit !important;
+    border: none !important;
+}
+
+/* Direct node styling - override any defaults */
+.reactflow-wrapper [data-id="start"],
+.reactflow-wrapper [data-id="end"],
+.reactflow-wrapper [data-id="open-app"],
+.reactflow-wrapper [data-id="open-web"],
+.reactflow-wrapper [data-id="message-sent"],
+.reactflow-wrapper [data-id="rate-limited"] {
+    background: #86efac !important;
+    border: 1.5px solid #22c55e !important;
+}
+
+.reactflow-wrapper [data-id="decision"],
+.reactflow-wrapper [data-id="is-mobile"],
+.reactflow-wrapper [data-id="success-check"],
+.reactflow-wrapper [data-id="check-limit"] {
+    background: #93c5fd !important;
+    border: 1.5px solid #3b82f6 !important;
+}
+
+.reactflow-wrapper [data-id="click-link"],
+.reactflow-wrapper [data-id="send-message"] {
+    background: #e879f9 !important;
+    border: 1.5px solid #d946ef !important;
+}
+
+.reactflow-wrapper [data-id="try-deep-link"],
+.reactflow-wrapper [data-id="submit-message"],
+.reactflow-wrapper [data-id="save-sheet"] {
+    background: #fde047 !important;
+    border: 1.5px solid #facc15 !important;
+}
+
+.reactflow-wrapper .react-flow__handle {
+    background: #9ca3af !important;
+}
+
+.reactflow-wrapper .react-flow__controls {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0.5rem !important;
+}
+
+.reactflow-wrapper .react-flow__controls button {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: var(--base-100) !important;
+}
+
+.reactflow-wrapper .react-flow__controls button:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.reactflow-wrapper .react-flow__attribution {
+    display: none !important;
+}
+
+@keyframes dashdraw {
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+.reactflow-node-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reactflow-node-content .node-icon {
+    font-size: 1.5rem;
+}
+
+.reactflow-node-content .node-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.flow-node {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    min-width: 200px;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    animation: slideUp 0.6s ease forwards;
+}
+
+.flow-node.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.flow-node:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px);
+}
+
+.flow-node-start,
+.flow-node-end {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%);
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+.flow-node-start:hover,
+.flow-node-end:hover {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.3) 0%, rgba(34, 197, 94, 0.2) 100%);
+    border-color: rgba(34, 197, 94, 0.6);
+}
+
+.flow-node-decision {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.flow-node-decision:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.2) 100%);
+    border-color: rgba(59, 130, 246, 0.6);
+}
+
+.flow-node-action {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+.flow-node-action:hover {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.3) 0%, rgba(168, 85, 247, 0.2) 100%);
+    border-color: rgba(168, 85, 247, 0.6);
+}
+
+.flow-node-process {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.1) 100%);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+.flow-node-process:hover {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.3) 0%, rgba(245, 158, 11, 0.2) 100%);
+    border-color: rgba(245, 158, 11, 0.6);
+}
+
+.node-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.node-label {
+    color: var(--base-100);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.flow-connector {
+    font-size: 1.5rem;
+    color: var(--base-350);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+.flow-paths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.flow-path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.flow-sub-paths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+}
+
+.flow-sub-path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--base-300) 0%, transparent 100%);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+}
+
+.timeline-item.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-marker {
+    position: relative;
+    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marker-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--base-100) 0%, var(--base-200) 100%);
+    color: var(--base-500);
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.marker-icon {
+    position: absolute;
+    font-size: 1.5rem;
+    z-index: 3;
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.timeline-content h4 {
+    color: var(--base-100);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+    color: var(--base-350);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.timeline-action {
+    color: var(--base-300);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+.timeline-connector {
+    position: absolute;
+    left: 2rem;
+    top: 4rem;
+    width: 2px;
+    height: 2rem;
+    background: linear-gradient(180deg, var(--base-300) 0%, transparent 100%);
+}
+
+
+.flow-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.flow-step-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.flow-step {
+    flex: 1;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.flow-step.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.flow-step:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.flow-step-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+}
+
+.flow-step-content {
+    flex: 1;
+}
+
+.flow-step-content h4 {
+    color: var(--base-100);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.flow-description {
+    color: var(--base-350);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.flow-action {
+    color: var(--base-300);
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--base-350);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.flow-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+}
+
+.legend-box {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.25rem;
+    flex-shrink: 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.legend-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.legend-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.legend-item span:last-child {
+    color: var(--base-100);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .reactflow-wrapper {
+        height: 500px;
+    }
+
+    .timeline::before {
+        left: 1.5rem;
+    }
+
+    .timeline-marker {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .marker-number {
+        font-size: 1.1rem;
+    }
+
+    .marker-icon {
+        font-size: 1.3rem;
+    }
+
+    .timeline-connector {
+        left: 1.5rem;
+    }
+
+    .flow-diagram {
+        padding: 1.5rem;
+    }
+
+    .flow-node {
+        min-width: 180px;
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .node-icon {
+        font-size: 1.25rem;
+    }
+
+    .flow-paths {
+        gap: 2rem;
+    }
+
+    .flow-sub-paths {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .user-flow-container {
+        padding: 2rem 0;
+    }
+
+    .reactflow-wrapper {
+        height: 400px;
+    }
+
+    .timeline {
+        padding: 1.5rem 0;
+    }
+
+    .timeline::before {
+        left: 1rem;
+    }
+
+    .timeline-item {
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-marker {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .marker-number {
+        font-size: 1rem;
+    }
+
+    .marker-icon {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
+
+    .timeline-description {
+        font-size: 0.9rem;
+    }
+
+    .timeline-action {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .timeline-connector {
+        left: 1rem;
+        height: 1.5rem;
+    }
+
+    .flow-diagram {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .flow-node {
+        min-width: 140px;
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .node-icon {
+        font-size: 1rem;
+    }
+
+    .node-label {
+        font-size: 0.75rem;
+    }
+
+    .flow-connector {
+        font-size: 1.25rem;
+    }
+
+    .flow-paths {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .flow-path {
+        gap: 1rem;
+    }
+
+    .flow-sub-paths {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .flow-sub-path {
+        gap: 1rem;
+    }
+
+    .flow-legend {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .legend-item {
+        padding: 0.45rem 0.5rem;
+        gap: 0.4rem;
+    }
+
+    .legend-box {
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 0.2rem;
+    }
+
+    .legend-item span:last-child {
+        font-size: 0.72rem;
+    }
+}
