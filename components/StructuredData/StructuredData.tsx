@@ -21,8 +21,8 @@ export const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Fitroya Nugraha Saleh",
-    url: "https://fitroyanugraha.com",
-    image: "https://fitroyanugraha.com/about/about.webp",
+    url: "https://fitroyanugraha.vercel.app",
+    image: "https://fitroyanugraha.vercel.app/about/about.webp",
     sameAs: [
         "https://www.linkedin.com/in/fitroyanugraha",
         "https://www.instagram.com/fitroyanugraha",
@@ -48,7 +48,7 @@ export const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Fitroya Nugraha Portfolio",
-    url: "https://fitroyanugraha.com",
+    url: "https://fitroyanugraha.vercel.app",
     description:
         "Portfolio showcasing video editing, graphic design, and web development projects",
     author: {
@@ -69,5 +69,5 @@ export const portfolioSchema = {
         "@type": "Person",
         name: "Fitroya Nugraha Saleh",
     },
-    url: "https://fitroyanugraha.com",
+    url: "https://fitroyanugraha.vercel.app",
 };

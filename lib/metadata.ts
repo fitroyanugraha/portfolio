@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fitroyanugraha.com";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fitroyanugraha.vercel.app";
 
 export const absoluteUrl = (path: string) => {
     if (!path) return siteUrl;
