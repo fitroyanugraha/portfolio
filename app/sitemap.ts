@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { siteUrl } from "@/lib/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://fitroyanugraha.vercel.app'
+    const baseUrl = siteUrl;
 
     return [
         {
