@@ -146,7 +146,7 @@ export const defaultMetadata: Metadata = {
         shortcut: "/assets/star.svg",
         apple: "/assets/star.svg",
     },
-    manifest: "/site.webmanifest",
+    // manifest: "/site.webmanifest",
     category: "portfolio",
     verification: {
         // Add your verification codes when available
